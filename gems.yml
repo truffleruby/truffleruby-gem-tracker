@@ -41,6 +41,8 @@ gems:
     workflows: [test.yml]
   - name: ruby/pp
     workflows: [test.yml]
+  - name: ruby/prism
+    workflows: [main.yml]
   - name: ruby/psych
     workflows: [test.yml]
   - name: ruby/rake
