@@ -39,6 +39,8 @@ gems:
     workflows: [test.yml]
   - name: ruby/pp
     workflows: [test.yml]
+  - name: ruby/psych
+    workflows: [test.yml]
   - name: ruby/rake
     workflows: [test.yml]
   - name: ruby/rdoc
