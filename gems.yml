@@ -31,6 +31,8 @@ gems:
     workflows: [test.yml]
   - name: ruby/net-pop
     workflows: [test.yml]
+  - name: ruby/nkf
+    workflows: [test.yml]
   - name: ruby/openssl
     workflows: [test.yml]
   - name: ruby/ostruct
