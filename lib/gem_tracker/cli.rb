@@ -16,6 +16,7 @@ module GemTracker
     option :aggregate, :type => :boolean, :default => true
     option :ruby, :type => :string, :default => nil
     option :days, :type => :numeric, :default => -1
+    option :filter, :type => :string, :default => nil
     def statuses()
       say "STATUSES"
       print_statuses_of_gems(GemTracker::GEMS.values)
@@ -54,6 +55,12 @@ module GemTracker
     end
 
     def print_statuses_of_gems(gems)
+      filter = parallel = options[:filter]
+      if filter
+        filter_regexp = /#{filter}/
+        gems = gems.select { |gem| filter_regexp.match?(gem.name) }
+      end
+
       parallel = options[:parallel]
 
       longest_name_size = gems.max_by { |g| g.repo_name.size }.repo_name.size
