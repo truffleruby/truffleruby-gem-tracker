@@ -57,6 +57,8 @@ gems:
     workflows: [ci.yml]
   - name: ruby/singleton
     workflows: [test.yml]
+  - name: ruby/syslog
+    workflows: [test.yml]
   - name: ruby/timeout
     workflows: [test.yml]
   - name: ruby/typeprof
