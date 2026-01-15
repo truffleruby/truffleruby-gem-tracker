@@ -53,6 +53,8 @@ gems:
     workflows: [truffle-ruby-test.yml]
   - name: ruby/ruby2_keywords
     workflows: [test.yml]
+  - name: ruby/ruby-bench
+    workflows: [test.yml]
   - name: ruby/stringio
     workflows: [ubuntu.yml]
   - name: ruby/strscan
