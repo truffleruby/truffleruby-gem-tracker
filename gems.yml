@@ -35,8 +35,9 @@ gems:
     workflows: [test.yml]
   - name: ruby/openssl
     workflows: [test.yml]
-  - name: ruby/ostruct
-    workflows: [test.yml]
+  # https://github.com/ruby/ostruct/pull/96
+  # - name: ruby/ostruct
+  #   workflows: [test.yml]
   - name: ruby/pathname
     workflows: [test.yml]
   - name: ruby/pp
