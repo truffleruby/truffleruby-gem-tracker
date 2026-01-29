@@ -136,8 +136,9 @@ gems:
   # Other
   - name: omniauth/omniauth-oauth2
     workflows: [main.yml]
-  - name: bcrypt-ruby/bcrypt-ruby
-    workflows: [ruby.yml]
+  # https://github.com/bcrypt-ruby/bcrypt-ruby/pull/292
+  # - name: bcrypt-ruby/bcrypt-ruby
+  #   workflows: [ruby.yml]
   - name: sporkmonger/addressable
     workflows: [test.yml]
   - name: guard/listen
