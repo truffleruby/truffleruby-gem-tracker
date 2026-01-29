@@ -185,8 +185,9 @@ gems:
     workflows: [ci.yml]
   - name: faker-ruby/faker
     workflows: [ruby.yml]
-  - name: CanCanCommunity/cancancan
-    workflows: [test.yml]
+  # https://github.com/CanCanCommunity/cancancan/pull/853
+  # - name: CanCanCommunity/cancancan
+  #   workflows: [test.yml]
   - name: asciidoctor/asciidoctor
     workflows: [ci.yml]
   - name: ms-ati/docile
