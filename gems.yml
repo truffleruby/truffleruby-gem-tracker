@@ -177,9 +177,10 @@ gems:
     workflows: [ci.yaml]
   - name: jeremyevans/roda
     workflows: [ci.yml]
-  - name: jeremyevans/sequel
-    workflows: [ci.yml]
-    expect: fail # see https://github.com/oracle/truffleruby/issues/2230
+  # Removed in https://github.com/jeremyevans/sequel/commit/a09c157116263f10762fa40d6cc68a1bd472bb61
+  # - name: jeremyevans/sequel
+  #   workflows: [ci.yml]
+  #   expect: fail # see https://github.com/oracle/truffleruby/issues/2230
   - name: steveklabnik/request_store
     workflows: [ci.yml]
   - name: faker-ruby/faker
