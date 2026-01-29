@@ -197,8 +197,9 @@ gems:
     workflows: [truffle_ruby.yml]
   - name: cgriego/active_attr
     workflows: [test.yaml]
-  - name: moiristo/deep_cloneable
-    workflows: [ruby.yml]
+  # Removed in https://github.com/moiristo/deep_cloneable/commit/c63f5e8f59bb35a3ef99138ca1b5f6f32ccdbc33
+  # - name: moiristo/deep_cloneable
+  #   workflows: [ruby.yml]
   - name: ambethia/recaptcha
     workflows: [ci.yml]
   - name: cedarcode/webauthn-ruby
