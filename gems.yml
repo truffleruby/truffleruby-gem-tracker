@@ -57,7 +57,7 @@ gems:
   - name: ruby/ruby2_keywords
     workflows: [test.yml]
   - name: ruby/rubygems
-    workflows: [daily-rubygems.yml, rubygems.yml]
+    workflows: [rubygems.yml, truffleruby-bundler.yml]
   - name: ruby/stringio
     workflows: [ubuntu.yml]
   - name: ruby/strscan
