@@ -98,7 +98,7 @@ gems:
     workflows: [ci.yml]
   - name: fxn/zeitwerk
     workflows: [ci.yml]
-  - name: Shopify/bootsnap
+  - name: rails/bootsnap
     workflows: [ci.yaml]
   - name: mikel/mail
     workflows: [test.yml]
