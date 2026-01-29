@@ -190,8 +190,9 @@ gems:
   #   workflows: [test.yml]
   - name: asciidoctor/asciidoctor
     workflows: [ci.yml]
-  - name: ms-ati/docile
-    workflows: [main.yml]
+  # https://github.com/ms-ati/docile/pull/130
+  # - name: ms-ati/docile
+  #   workflows: [main.yml]
   - name: omniauth/omniauth
     workflows: [truffle_ruby.yml]
   - name: cgriego/active_attr
