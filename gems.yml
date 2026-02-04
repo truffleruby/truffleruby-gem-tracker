@@ -124,6 +124,8 @@ gems:
     workflows: [test.yml]
   # - name: rsim/oracle-enhanced
   #   workflows: [test.yml] # disabled in https://github.com/rsim/oracle-enhanced/commit/4f1dce2dfe22a740a27afd035097d19cb2a50d9a
+  - name: petergoldstein/dalli
+    workflows: [tests.yml]
 
   # async-related
   - name: socketry/async-container
