@@ -260,9 +260,8 @@ gems:
     workflows: [test.yml]
   - name: emancu/toml-rb
     workflows: [ruby.yml]
-  # https://github.com/dazuma/toys/pull/414
-  # - name: dazuma/toys
-  #   workflows: [ci.yml]
+  - name: dazuma/toys
+    workflows: [ci.yml]
   - name: cucumber/cucumber-ruby
     workflows: [test.yaml]
   - name: msgpack/msgpack-ruby
