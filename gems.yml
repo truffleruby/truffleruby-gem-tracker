@@ -138,6 +138,8 @@ gems:
     expect: fail # unclear failure
 
   # Other
+  - name: Shopify/liquid
+    workflows: [liquid.yml]
   - name: omniauth/omniauth-oauth2
     workflows: [main.yml]
   - name: bcrypt-ruby/bcrypt-ruby
