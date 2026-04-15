@@ -31,33 +31,40 @@ class GemTracker::GitHubActions < GemTracker::CI
 
       runs.each do |r|
         any_run = true
+        cancelled = false
+
         # p r['created_at']
         jobs = get_run_jobs(r["jobs_url"])
         jobs.each do |j|
           # p j["name"]
-          if j["name"].downcase.include?(gem.pattern) and j["conclusion"] != "cancelled"
-            url = j["html_url"]
-            result = if j["status"] == "in_progress"
-                       :in_progress
-                     elsif j["status"] == "completed"
-                       if j["conclusion"] == "success"
-                        # need to verify runs since continue-on-error status is success for errors
-                        annotations = get_annotations(j["check_run_url"])
-                        if annotations.any? { |a| a['annotation_level'] == 'failure' }
-                          :failure
-                        else
-                          :success
-                        end
-                       else
-                        :failure
-                       end
-                     else
-                       :unknown
-                     end
-            statuses << GemTracker::Status.new(gem: gem, result: result, job_name: j["name"].gsub("\n", " "), url: url, time: Time.iso8601(j["started_at"]), job_url: j["url"])
+          if j["name"].downcase.include?(gem.pattern)
+            if j["conclusion"] == "cancelled"
+              cancelled = true
+            else
+              url = j["html_url"]
+              result = if j["status"] == "in_progress"
+                :in_progress
+              elsif j["status"] == "completed"
+                if j["conclusion"] == "success"
+                  # need to verify runs since continue-on-error status is success for errors
+                  annotations = get_annotations(j["check_run_url"])
+                  if annotations.any? { |a| a['annotation_level'] == 'failure' }
+                    :failure
+                  else
+                    :success
+                  end
+                else
+                  :failure
+                end
+              else
+                :unknown
+              end
+              statuses << GemTracker::Status.new(gem: gem, result: result, job_name: j["name"].gsub("\n", " "), url: url, time: Time.iso8601(j["started_at"]), job_url: j["url"])
+            end
           end
         end
         break unless statuses.empty?
+        break unless cancelled
       end
     end
 
