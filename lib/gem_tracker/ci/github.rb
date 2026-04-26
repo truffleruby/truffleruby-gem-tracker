@@ -18,12 +18,12 @@ class GemTracker::GitHubActions < GemTracker::CI
     gem.workflows.each do |w|
       workflow = get_workflow(w)
       workflow_path = workflow.fetch("path")
+      workflow_state = workflow.fetch("state")
       unless repo_file_exists?(workflow_path, branch)
         raise "GitHub workflow #{w} no longer exists on #{branch}"
       end
-      if workflow["state"] == "deleted"
-        # raise "GitHub workflow #{w} is deleted"
-        runs = []
+      if %w[deleted disabled_manually].include?(workflow_state)
+        raise "GitHub workflow #{w} is #{workflow_state}"
       else
         runs = get_workflow_runs(w, branch)
       end
