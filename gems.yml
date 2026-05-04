@@ -1,6 +1,8 @@
 ---
 gems:
   # ruby/*, sorted alphabetically
+  - name: ruby/benchmark
+    workflows: [test.yml]
   - name: ruby/bigdecimal
     workflows: [ci.yml]
   - name: ruby/cgi
