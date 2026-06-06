@@ -61,7 +61,7 @@ gems:
   - name: ruby/ruby2_keywords
     workflows: [test.yml]
   - name: ruby/rubygems
-    workflows: [rubygems.yml, truffleruby-bundler.yml]
+    workflows: [rubygems.yml, bundler.yml]
   - name: ruby/stringio
     workflows: [ubuntu.yml]
   - name: ruby/strscan
@@ -125,7 +125,7 @@ gems:
   - name: kubo/ruby-oci8
     workflows: [tests.yml]
   - name: rsim/ruby-plsql
-    workflows: [test.yml]
+    workflows: [truffleruby.yml]
   # - name: rsim/oracle-enhanced
   #   workflows: [test.yml] # disabled in https://github.com/rsim/oracle-enhanced/commit/4f1dce2dfe22a740a27afd035097d19cb2a50d9a
   - name: petergoldstein/dalli
@@ -267,7 +267,7 @@ gems:
   - name: dazuma/toys
     workflows: [ci.yml]
   - name: cucumber/cucumber-ruby
-    workflows: [test.yaml]
+    workflows: [test-ruby.yaml]
   - name: msgpack/msgpack-ruby
     workflows: [ci.yaml]
   - name: eregon/path
