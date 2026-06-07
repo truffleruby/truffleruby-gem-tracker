@@ -140,6 +140,8 @@ gems:
     expect: fail # unclear failure
 
   # Other
+  - name: haml/haml
+    workflows: [test.yml]
   - name: Shopify/liquid
     workflows: [liquid.yml]
   - name: omniauth/omniauth-oauth2
