@@ -7,4 +7,4 @@ gem "rspec", "~> 3.0"
 
 gem "dotenv"
 
-gem 'concurrent-ruby', '~> 1.1', '>= 1.1.10'
+gem 'concurrent-ruby', '~> 1.3'
