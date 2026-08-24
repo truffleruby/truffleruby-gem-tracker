@@ -50,6 +50,8 @@ gems:
     workflows: [test.yml]
   - name: ruby/rake
     workflows: [test.yml]
+  - name: ruby/rbs
+    workflows: [truffleruby.yml]
   - name: ruby/rdoc
     workflows: [test.yml]
   - name: ruby/reline
